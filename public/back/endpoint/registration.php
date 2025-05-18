@@ -22,15 +22,5 @@ $userData = [
 ];
 $user = $usersRepository->save($userData);
 
-// Сохранение заявки пользователя
-$application = [
-    'husbandName' => $data['husbandName'],
-    'wifeName' => $data['wifeName'],
-    'contactNumber' => $data['contactNumber'],
-    'login' => $data['login'],
-    'marriagePlace' => $data['marriagePlace']
-];
-$usersRepository->addApplication($user['id'], $application);
-
 // Отправка ответа
 echo json_encode(["success" => true, "message" => "Успешная регистрация"]);

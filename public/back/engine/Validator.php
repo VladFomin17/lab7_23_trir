@@ -86,18 +86,18 @@ class Validator
             $id = $usersRepository->findByLogin($data['login'])['id'];
             $errors['login'] = 'Пользователь с таким логином уже существует. ID ' . $id;
         }
-        if (!self::validatePhone($data['contactNumber'])) {
-            $errors['contactNumber'] = 'Номер телефона должен быть в формате +7(XXX)XXX-XX-XX';
-        }
+//        if (!self::validatePhone($data['contactNumber'])) {
+//            $errors['contactNumber'] = 'Номер телефона должен быть в формате +7(XXX)XXX-XX-XX';
+//        }
         if (!self::validatePassword($data['password'])) {
             $errors['password'] = '
                 Пароль должен содержать минимум 6 символов, включая цифры, заглавные и строчные буквы
             ';
         }
-        if (self::validateApplication($data, $usersRepository)) {
-            $id = self::validateApplication($data, $usersRepository);
-            $errors['registration'] = 'Такая заявка уже существует. ID ' . $id;
-        }
+//        if (self::validateApplication($data, $usersRepository)) {
+//            $id = self::validateApplication($data, $usersRepository);
+//            $errors['registration'] = 'Такая заявка уже существует. ID ' . $id;
+//        }
 
         return $errors;
     }

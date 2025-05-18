@@ -58,8 +58,7 @@ input:focus {
 }
 
 /* Кнопка входа */
-button[type="submit"] {
-    width: 100%;
+button {
     padding: 12px;
     background: #4CAF50; /* Зеленая кнопка */
     color: white;
@@ -71,12 +70,13 @@ button[type="submit"] {
     transition: background 0.2s;
 }
 
-button[type="submit"]:hover {
+button:hover {
     background: #45a049; /* Темнее при наведении */
 }
 
 /* Кнопка регистрации */
-#registration-button {
+#registration-button,
+#login-button {
     background: #FFA726; /* Оранжевая */
     color: white;
     border: none;
@@ -115,7 +115,8 @@ button[type="submit"]:hover {
 }
 
 /* Ссылка на регистрацию */
-.register-link-container {
+.register-link-container,
+.login-link-container {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,0 +1,47 @@
+/* Уникальные стили для страницы игры */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-bottom: 10px;
+}
+
+.game-container {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    min-height: 300px;
+    border: 2px dashed #ccc;
+}
+
+.stats {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.stats th, .stats td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.stats th {
+    background-color: #ffa726;
+    color: white;
+}
+
+.stats tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
