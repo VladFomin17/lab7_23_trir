@@ -2,7 +2,7 @@ import { Navigation } from './Navigation.js';
 import { Thermometer } from './Thermometer.js';
 import { Exercise } from './Exercise.js';
 import { Timer } from './Timer.js';
-import {ApiClient} from "./ApiClient.js";
+import { ApiClient } from "./ApiClient.js";
 
 export class Game {
     constructor() {
@@ -11,7 +11,7 @@ export class Game {
         this.navigation = new Navigation(this);
         this.thermometer = new Thermometer(this.minTemp, this.maxTemp);
         this.exercise = new Exercise(this.minTemp, this.maxTemp);
-        this.initialTime = 10; // 10 секунд на первое задание
+        this.initialTime = 10;
         this.currentTimeLimit = this.initialTime;
         this.timer = null;
         this.score = 0;
@@ -97,9 +97,9 @@ export class Game {
         SCORE_CONTAINER.textContent = this.score;
     }
 
-    postResults() {
+    async postResults() {
         const API = new ApiClient("../../back/endpoint/saveScore.php");
-        const RESULT = API.post({
+        const RESULT = await API.post({
             login: JSON.parse(localStorage.getItem("currentUser")).login,
             score: this.score
         });

@@ -24,6 +24,13 @@ export class Navigation {
         }
     }
 
+    bindStatsButton(callback) {
+        const BUTTON = document.getElementById("statistics-button");
+        if (BUTTON) {
+            BUTTON.onclick = callback;
+        }
+    }
+
     setUserName(name) {
         const CONTAINER = document.querySelector(".user-name");
         if (CONTAINER) CONTAINER.textContent = name;
@@ -42,6 +49,22 @@ export class Navigation {
                 </div>
             </div>
             <div class="answers"></div>
+        `;
+    }
+
+    renderStatsLayout() {
+        const CONTAINER = document.querySelector(".game-container");
+        CONTAINER.innerHTML = `
+            <div class="stats-container">
+                <form id="stats-form">
+                    <label><input id="my-stats" type="radio" name="stats" checked>Моя статистика</label>
+                    <label><input id="total-stats" type="radio" name="stats">Общая статистика</label>
+                </form>
+                <table class="stats">
+                    <thead id="stats-head"></thead>
+                    <tbody id="stats-body"></tbody>
+                </table>
+            </div>
         `;
     }
 
@@ -64,6 +87,7 @@ export class Navigation {
         document.querySelector(".stop-btn").style.display = "none";
         document.querySelector(".thermometer-wrapper").style.display = "none";
         document.querySelector(".answers").style.display = "none";
+        document.querySelector(".game-info-container").style.display = "none";
         document.getElementById("start-game").style.display = "block";
     }
 
