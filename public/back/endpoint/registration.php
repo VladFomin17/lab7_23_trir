@@ -18,7 +18,8 @@ if (!empty($errors)) {
 // Сохранение данных пользователя
 $userData = [
     'login' => $data['login'],
-    'password' => $data['password']
+    'password' => $data['password'],
+    'game-results' => []
 ];
 $user = $usersRepository->save($userData);
 

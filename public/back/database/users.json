@@ -1,49 +1,17 @@
 [
     {
-        "login": "IvanTest",
+        "login": "GameTest",
         "password": "Test123",
-        "id": "680f37744bc66",
-        "visits": 16,
-        "applications": [
+        "id": "68330eecc6ff0",
+        "game-results": [
             {
-                "husbandName": "Даниил",
-                "wifeName": "Анастасия",
-                "contactNumber": "85443672145",
-                "login": "IvanTest",
-                "marriagePlace": "Другое",
-                "id": "31f9"
+                "score": 40,
+                "id": "22a3"
             },
             {
-                "husbandName": "Михаил",
-                "wifeName": "Анастасия",
-                "contactNumber": "89765441256",
-                "login": "IvanTest",
-                "marriagePlace": "ЗАГС Октябрьского района",
-                "id": "7525"
+                "score": 30,
+                "id": "53de"
             }
         ]
-    },
-    {
-        "login": "Gregor",
-        "password": "Zalupa14",
-        "id": "6819d2a81fb84",
-        "visits": 1,
-        "applications": [
-            {
-                "husbandName": "Грегор",
-                "wifeName": "Катя Гуреева",
-                "contactNumber": "86736463478",
-                "login": "Gregor",
-                "marriagePlace": "ЗАГС Первомайского района",
-                "id": "1814"
-            }
-        ]
-    },
-    {
-        "login": "IvanTest1",
-        "password": "Test123",
-        "id": "6829de21b8b81",
-        "visits": 0,
-        "applications": []
     }
 ]

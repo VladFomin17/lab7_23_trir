@@ -2,6 +2,7 @@ import { Navigation } from './Navigation.js';
 import { Thermometer } from './Thermometer.js';
 import { Exercise } from './Exercise.js';
 import { Timer } from './Timer.js';
+import {ApiClient} from "./ApiClient.js";
 
 export class Game {
     constructor() {
@@ -13,6 +14,7 @@ export class Game {
         this.initialTime = 10; // 10 секунд на первое задание
         this.currentTimeLimit = this.initialTime;
         this.timer = null;
+        this.score = 0;
 
         this.navigation.bindStartButton(() => this.startGame());
         this.navigation.bindExitButton(() => this.exitGame());
@@ -33,14 +35,20 @@ export class Game {
         this.navigation.bindStartButton(() => this.startGame());
         this.navigation.hideStartButton();
         this.createExercise();
+        this.updateScore();
         this.navigation.showStopButton(() => this.stopGame());
     }
 
     stopGame() {
         this.navigation.hideGame();
-        if (this.timer) this.timer.stop();
-        alert("⏰ Время вышло! Игра окончена.");
+        if (this.timer) {
+            this.timer.stop();
+            this.currentTimeLimit = this.initialTime;
+        }
+        this.postResults();
         this.navigation.updateTimer("00:00");
+        this.score = 0;
+        this.updateScore();
     }
 
     exitGame() {
@@ -48,16 +56,18 @@ export class Game {
         window.location.href = "../../index.html";
     }
 
-    createExercise() {
-        const TEMPERATURE = this.exercise.getRandomTemp();
+    async createExercise() {
+        const TEMPERATURE = await this.exercise.getRandomTemp();
         this.thermometer.update(TEMPERATURE);
-        const ANSWERS = this.exercise.generateAnswers(TEMPERATURE);
+        const ANSWERS = await this.exercise.generateAnswers(TEMPERATURE);
         if (this.timer) this.timer.stop();
 
         this.navigation.renderAnswers(ANSWERS, (answer) => {
             this.timer.stop();
             if (answer === TEMPERATURE) {
                 this.navigation.markCorrect(answer);
+                this.score += 10;
+                this.updateScore();
                 this.currentTimeLimit = Math.max(this.currentTimeLimit - 1, 1);
             } else {
                 this.navigation.markIncorrect(answer);
@@ -80,5 +90,21 @@ export class Game {
                 this.navigation.updateTimer(this.timer.getTimeRemaining());
             }
         }, 1000);
+    }
+
+    updateScore() {
+        const SCORE_CONTAINER = document.querySelector(".score");
+        SCORE_CONTAINER.textContent = this.score;
+    }
+
+    postResults() {
+        const API = new ApiClient("../../back/endpoint/saveScore.php");
+        const RESULT = API.post({
+            login: JSON.parse(localStorage.getItem("currentUser")).login,
+            score: this.score
+        });
+        if (!RESULT.success) {
+            console.log(RESULT);
+        }
     }
 }

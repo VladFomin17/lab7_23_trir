@@ -78,8 +78,6 @@ class JsonRepository implements Repository
     {
         $items = $this->findAll();
         $data['id'] = uniqid();
-        $data['visits'] = 0;
-        $data['applications'] = [];
         $items[] = $data;
         $this->saveAll($items);
         return $data;
@@ -147,6 +145,22 @@ class JsonRepository implements Repository
             if ($item['id'] === $id) {
                 $data['id'] = substr(uniqid(), 9, 13);
                 $item['applications'][] = $data;
+                $this->saveAll($items);
+                return $data;
+            }
+        }
+
+        throw new Exception("Пользователь не найден");
+    }
+
+    public function addScore(string $id, array $data): array
+    {
+        $items = $this->findAll();
+
+        foreach ($items as &$item) {
+            if ($item['id'] === $id) {
+                $data['id'] = substr(uniqid(), 9, 13);
+                $item['game-results'][] = $data;
                 $this->saveAll($items);
                 return $data;
             }

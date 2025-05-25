@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById("registration-error").textContent = RESULT.message;
             }
         } else {
-            window.location.href = "game.html";
+            window.location.href = "../../index.html";
         }
     });
 });
