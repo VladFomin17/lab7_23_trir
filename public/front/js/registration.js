@@ -1,6 +1,10 @@
 import {ApiClient} from "./ApiClient.js";
 
+/**
+ * Отправка формы
+ */
 document.addEventListener("DOMContentLoaded", function() {
+    showAvatars();
     document.getElementById("registration-form").addEventListener("submit", async(e) => {
         e.preventDefault();
 
@@ -26,6 +30,53 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /**
+ * Получает аватарки с сервера
+ *
+ * @returns {Promise<*>}
+ */
+async function getAvatars() {
+    const API = new ApiClient("../../back/endpoint/getAvatars.php");
+    const RESULT = await API.get();
+    if (RESULT.success) {
+        return RESULT.avatars;
+    } else {
+        console.log(RESULT);
+    }
+}
+
+/**
+ * Показывает аватарки в форме пользователю
+ *
+ * @returns {Promise<void>}
+ */
+async function showAvatars() {
+    const AVATARS = await getAvatars();
+    const CONTAINER = document.getElementById("avatar-selection");
+
+    AVATARS.forEach(avatar => {
+        const IMG = document.createElement('img');
+        IMG.src = avatar.url;
+        IMG.dataset.id = avatar.id;
+        IMG.style.width = "80px";
+        IMG.style.margin = "5px";
+        IMG.style.cursor = "pointer";
+
+        IMG.onclick = () => {
+            document.querySelectorAll("#avatar-selection img").forEach(i =>
+                i.classList.remove("selected"));
+            IMG.classList.add("selected");
+            document.getElementById("avatar_id").value = avatar.id;
+        };
+
+        CONTAINER.appendChild(IMG);
+    });
+
+    const DEFAULT_IMG = document.querySelector("#avatar-selection img");
+    DEFAULT_IMG.classList.add("selected");
+    document.getElementById("avatar_id").value = DEFAULT_IMG.dataset.id;
+}
+
+/**
  * Функция, создающая пользователя на основе данных из формы.
  *
  * @returns {object} Объект с данными пользователя
@@ -33,7 +84,8 @@ document.addEventListener("DOMContentLoaded", function() {
 function createUser() {
     const USER_DATA = {
         login: document.getElementById("login").value,
-        password: document.getElementById("password").value
+        password: document.getElementById("password").value,
+        avatar_id: document.getElementById("avatar_id").value
     };
 
     return USER_DATA;

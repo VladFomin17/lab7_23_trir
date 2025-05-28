@@ -1,7 +1,8 @@
 import { Game } from './Game.js';
-import {Statistics} from "./Statistics.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+/**
+ * Инициализация игры при загрузке страницы
+ */
+$(document).ready(function() {
     new Game();
-    new Statistics();
 });

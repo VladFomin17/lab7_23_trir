@@ -1,12 +1,31 @@
 import {ApiClient} from "./ApiClient.js";
 
+/**
+ * Класс, запрашивающий задания с сервера
+ *
+ * @class
+ */
 export class Exercise {
+
+    /**
+     * Конструктор класса
+     *
+     * @constructor
+     * @param min
+     * @param max
+     */
     constructor(min, max) {
         this.min = min;
         this.max = max;
     }
 
-    async getExercise(correct) {
+    /**
+     * Функция запрашивает варианты ответов с сервера
+     *
+     * @param correct
+     * @returns {Promise<Exercise>}
+     */
+    async generateAnswers(correct) {
         const API = new ApiClient("../../back/endpoint/newExercise.php");
         const RESULT = await API.post({
             min: this.min,
@@ -21,7 +40,12 @@ export class Exercise {
         }
     }
 
-    async getCorrect() {
+    /**
+     * Функция запрашивает верный ответ для задания с сервера
+     *
+     * @returns {Promise<*>}
+     */
+    async getRandomTemp() {
         const API = new ApiClient("../../back/endpoint/newCorrect.php");
         const RESULT = await API.post(this);
 
@@ -30,21 +54,5 @@ export class Exercise {
         } else {
             console.log(RESULT);
         }
-    }
-
-    getRandomTemp() {
-        return this.getCorrect();
-        //return Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
-    }
-
-    generateAnswers(correct) {
-        return this.getExercise(correct);
-        /*
-        const OPTIONS = new Set([correct]);
-        while (OPTIONS.size < 4) {
-            OPTIONS.add(this.getRandomTemp());
-        }
-        return Array.from(OPTIONS).sort(() => Math.random() - 0.5);
-         */
     }
 }

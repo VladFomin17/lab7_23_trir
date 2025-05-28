@@ -1,9 +1,25 @@
+/**
+ * Класс термометра
+ *
+ * @class
+ */
 export class Thermometer {
+
+    /**
+     * Конструктор класса
+     *
+     * @constructor
+     * @param min
+     * @param max
+     */
     constructor(min, max) {
         this.min = min;
         this.max = max;
     }
 
+    /**
+     * Рисует шкалу термометра
+     */
     drawScale() {
         const SCALE = document.getElementById('thermometer-scale');
         SCALE.innerHTML = '';
@@ -23,6 +39,11 @@ export class Thermometer {
         }
     }
 
+    /**
+     * Обновляет температуру
+     *
+     * @param temp
+     */
     update(temp) {
         const PERCENT = ((temp - this.min) / (this.max - this.min)) * 100;
         document.getElementById('mercury').style.height = `${PERCENT}%`;

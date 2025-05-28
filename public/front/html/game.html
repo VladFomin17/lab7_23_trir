@@ -10,16 +10,22 @@
 </head>
 <body>
     <div class="container">
-        <div class="user-name"></div>
+        <div class="user-info-container">
+            <div class="user-avatar-container"></div>
+            <div class="user-name"></div>
+            <button id="exit-button">Выйти</button>
+        </div>
         <div class="game-info-container">
             <div class="timer"></div>
             <div class="score"></div>
         </div>
+        <div class="tabs">
+            <button class="tab active" id="game-tab">🎮 Игра</button>
+            <button class="tab" id="stats-tab">📊 Статистика</button>
+        </div>
         <div class="game-container">
             <button id="start-game">Начать игру</button>
-            <button class="statistics-button" id="statistics-button">Статистика</button>
         </div>
-        <button id="exit-button">Выйти</button>
     </div>
 </body>
 </html>

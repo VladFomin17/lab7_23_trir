@@ -7,15 +7,100 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.user-avatar-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #6c5ce7;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-avatar-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .user-name {
-    font-size: 24px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 32px;
     font-weight: bold;
-    color: #ff6b6b;
-    margin-bottom: 10px;
+    color: #2d3436;
+    padding: 10px 0;
+}
+
+.user-avatar-container::before {
+    content: "😊";
+    font-size: 80px;
+    display: none;
+}
+
+.user-avatar-container:empty::before {
+    display: block;
+}
+
+.user-info-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #ffffff;
+    padding: 20px 80px 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid #e0e0e0;
+    margin-bottom: 30px;
+    min-height: 100px;
+}
+
+#exit-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 8px 20px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.3);
+    transition: all 0.3s ease;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+#exit-button:hover {
+    background: #ff4757;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+#exit-button:active {
+    transform: translateY(-50%) scale(0.98);
 }
 
 .game-info-container {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
@@ -29,7 +114,6 @@
     position: relative;
 }
 
-/* Таймер */
 .timer {
     background-color: #ffecb3;
     padding: 8px 16px;
@@ -39,7 +123,6 @@
     box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
 }
 
-/* Очки */
 .score {
     background-color: #d1f5d3;
     padding: 8px 16px;
@@ -58,19 +141,73 @@
     min-height: 300px;
     border: 2px dashed #ccc;
     display: flex;
-    gap: 100px; /* расстояние между термометром и кнопками */
+    gap: 100px;
     align-items: center;
     justify-content: center;
 }
 
-.statistics-button {
-    background-color: #ffa726;
+#start-game {
+    display: inline-block;
+    padding: 20px 40px 20px 80px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #3b9340, #fdcb6e);
     color: white;
-}
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(59, 147, 64, 0.4);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 
-.statistics-button:hover {
-    background-color: #ff9800;
-    color: white;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        background: url('../img/play-icon.svg') no-repeat center;
+        background-size: 32px 32px;
+    }
+
+    &:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 12px 20px rgba(59, 147, 64, 0.6);
+        background: linear-gradient(45deg, #fdcb6e, #3b9340);
+
+        &::before {
+            transform: translateY(-50%) scale(1.2);
+        }
+    }
+
+    &:active {
+        transform: translateY(2px);
+        box-shadow: 0 4px 8px rgba(59, 147, 64, 0.6);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: rgba(255,255,255,0.1);
+        transform: rotate(45deg);
+        transition: all 0.5s ease;
+        opacity: 0;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        left: 100%;
+    }
 }
 
 .stats-container {
@@ -100,45 +237,129 @@
     gap: 8px;
 }
 
-.stats-container input[type="radio"] {
-    accent-color: #ffa726; /* акцент — оранжевый */
-    width: 18px;
-    height: 18px;
+.stats-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f0f8ff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 100, 255, 0.1);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
-table.stats {
+.my-stats-name,
+.total-stats-name {
+    color: #6c5ce7;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0 10px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.my-stats {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    border: 1px solid #ffcc80;  /* мягкая оранжевая граница */
-    border-radius: 8px;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px rgba(108, 92, 231, 0.2);
 }
 
-table.stats thead {
-    background-color: #ffa726;
+.my-stats th {
+    background: #a29bfe;
     color: white;
+    padding: 12px;
+    text-align: left;
 }
 
-table.stats th,
-table.stats td {
-    padding: 12px 16px;
-    font-size: 16px;
-    border-bottom: 1px solid #ffe0b2;
+.my-stats td {
+    padding: 12px;
+    border-bottom: 1px solid #dfe6e9;
+    color: #2d3436;
 }
 
-table.stats tbody tr:last-child td {
+.my-stats tr:last-child td {
     border-bottom: none;
 }
 
-table.stats tbody tr:nth-child(even) {
-    background-color: #fff3e0;
+.my-stats tr:hover {
+    background-color: #f7f7ff;
 }
 
-table.stats tbody tr:hover {
-    background-color: #fff2d4;
-    transition: background-color 0.2s;
+.total-stats {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(253, 121, 168, 0.2);
+}
+
+.total-stats th {
+    background: #fd79a8;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.total-stats td {
+    padding: 15px;
+    border-bottom: 1px solid #ffeaa7;
+    color: #2d3436;
+    font-size: 16px;
+}
+
+.total-stats tr:nth-child(even) {
+    background-color: #fff9f9;
+}
+
+.total-stats tr:hover {
+    background-color: #ffebf1;
+}
+
+.total-stats tr:first-child td {
+    font-weight: bold;
+    color: #e84393;
+    font-size: 17px;
+}
+
+.total-stats tr:first-child {
+    background-color: #ffeaa7;
+}
+
+.total-stats tr:first-child:hover {
+    background-color: #ffde7d;
+}
+
+.total-stats tr:first-child td:first-child::before {
+    content: "👑 ";
+}
+
+.total-stats tr:nth-child(2) td:first-child::before {
+    content: "🥈 ";
+}
+
+.total-stats tr:nth-child(3) td:first-child::before {
+    content: "🥉 ";
+}
+
+#total-stats-body img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ffd700;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#total-stats-body img:hover {
+    transform: scale(1.1);
 }
 
 .thermometer-wrapper {
@@ -163,8 +384,8 @@ table.stats tbody tr:hover {
     width: 50px;
     height: 100%;
     position: relative;
-    margin-left: 0; /* убираем отступ */
-    margin-right: auto; /* чтобы прижать к левой стороне термометра */
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .mercury {
@@ -178,10 +399,10 @@ table.stats tbody tr:hover {
 
 .scale {
     position: absolute;
-    left: 55%; /* ближе к центру термометра */
+    left: 55%;
     height: 100%;
     width: 40px;
-    border-left: 2px solid #333; /* основная вертикальная линия шкалы */
+    border-left: 2px solid #333;
     box-sizing: border-box;
 }
 
@@ -194,19 +415,17 @@ table.stats tbody tr:hover {
     box-sizing: border-box;
 }
 
-/* Засечки */
 .scale-mark::after {
     content: '';
     position: absolute;
     top: 50%;
-    left: 0; /* Засечка начинается с линии */
-    width: 10px; /* Ширина засечки */
+    left: 0;
+    width: 10px;
     height: 1px;
     background: #333;
-    transform: translate(-50%, -50%); /* <-- Центрируем по горизонтали и вертикали */
+    transform: translate(-50%, -50%);
 }
 
-/* Более жирные и длинные для major */
 .scale-mark.major::after {
     width: 14px;
     height: 2px;
@@ -218,7 +437,7 @@ table.stats tbody tr:hover {
     font-size: 18px;
     font-weight: 600;
     color: #fff;
-    background-color: #FFA726; /* приятный зелёный */
+    background-color: #FFA726;
     border: none;
     border-radius: 12px;
     box-shadow: 0 4px 6px #a66700;
@@ -259,21 +478,21 @@ table.stats tbody tr:hover {
 }
 
 .stop-btn {
-    background-color: #e53935; /* насыщенно-красный */
+    background-color: #e53935;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px; /* отступ сверху */
+    margin-top: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
 .stop-btn:hover {
-    background-color: #c62828; /* немного темнее при наведении */
+    background-color: #c62828;
 }
 
 #timer-display {
@@ -281,4 +500,139 @@ table.stats tbody tr:hover {
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
+}
+
+.game-end-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+
+    opacity: 0;
+    transform: translate(-50%, -40%);
+
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: bold;
+    border: 3px solid #ff6b6b;
+
+    animation: modalAppear 0.5s ease-out forwards;
+}
+
+@keyframes modalAppear {
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.game-end-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(3px);
+
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.close-message-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 25px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-message-btn:hover {
+    background-color: #ff4757;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 3px solid #6c5ce7;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    border-radius: 10px 10px 0 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-right: 5px;
+}
+
+.tab:hover {
+    background: rgba(108, 92, 231, 0.1);
+}
+
+.tab.active {
+    color: #6c5ce7;
+    background: white;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #6c5ce7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: sparkle-animation 1s ease-out forwards;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.9;
+}
+
+@keyframes sparkle-animation {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5) translate(var(--x), var(--y));
+        opacity: 0;
+    }
 }

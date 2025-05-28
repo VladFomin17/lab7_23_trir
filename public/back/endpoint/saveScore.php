@@ -19,6 +19,7 @@ try {
 $scoreData = [
     'id' => $user['id'],
     'login' => $user['login'],
+    'avatar_id' => $user['avatar_id'],
     'score' => $data['score']
 ];
 $score = $resultsRepository->save($scoreData);

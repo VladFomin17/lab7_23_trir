@@ -2,16 +2,600 @@
     {
         "id": "683322dab60d4",
         "login": "GameTest",
+        "avatar_id": "dog",
         "score": 30
     },
     {
         "id": "6833581255887",
         "login": "GameTest",
+        "avatar_id": "dog",
         "score": 80
     },
     {
         "id": "68335c50c70c1",
         "login": "GameTest",
+        "avatar_id": "dog",
         "score": 20
+    },
+    {
+        "id": "68336d1a004fc",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 0
+    },
+    {
+        "id": "68336da51b258",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 50
+    },
+    {
+        "id": "68336f99d1164",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 80
+    },
+    {
+        "id": "68337371f20a4",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 80
+    },
+    {
+        "id": "6833746697ef0",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 0
+    },
+    {
+        "id": "683378cf0614a",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 90
+    },
+    {
+        "id": "683379b971540",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 0
+    },
+    {
+        "id": "68338a5cbee77",
+        "login": "new user",
+        "avatar_id": "dog",
+        "score": 80
+    },
+    {
+        "id": "6833fe791e137",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 80
+    },
+    {
+        "id": "6833ff1e73dbe",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 90
+    },
+    {
+        "id": "6833ff8c7e16d",
+        "login": "GameTest",
+        "avatar_id": "dog",
+        "score": 80
+    },
+    {
+        "id": "68342ebe8b35e",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 210
+    },
+    {
+        "id": "683430b20762f",
+        "login": "123",
+        "avatar_id": "dog",
+        "score": 0
+    },
+    {
+        "id": "683430cf560f0",
+        "login": "123",
+        "avatar_id": "dog",
+        "score": 0
+    },
+    {
+        "id": "683430e9beeb5",
+        "login": "123",
+        "avatar_id": "dog",
+        "score": 0
+    },
+    {
+        "id": "6834311028ecb",
+        "login": "123",
+        "avatar_id": "dog",
+        "score": 10
+    },
+    {
+        "id": "6834313336c78",
+        "login": "123",
+        "avatar_id": "dog",
+        "score": 0
+    },
+    {
+        "id": "683431576b9b5",
+        "login": "123",
+        "avatar_id": "dog",
+        "score": 60
+    },
+    {
+        "id": "6834319cd457b",
+        "login": "123",
+        "avatar_id": "dog",
+        "score": 10
+    },
+    {
+        "id": "6834320b854a5",
+        "login": "123",
+        "avatar_id": "dog",
+        "score": 0
+    },
+    {
+        "id": "683565744a88d",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "683565a0134cf",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 90
+    },
+    {
+        "id": "68356d193041f",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "683570e1bed49",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 90
+    },
+    {
+        "id": "6835711d9bde6",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 130
+    },
+    {
+        "id": "6836075d6f72e",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 50
+    },
+    {
+        "id": "68360b294ab73",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68360b8d366dc",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68360c7af216e",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68360d2cbec9c",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68360d5e383b3",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68360d9c44489",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68360da8b95cb",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68360ecc7ef90",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68360f635840f",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 80
+    },
+    {
+        "id": "683702cff4037",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "683705d8efe8f",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 120
+    },
+    {
+        "id": "6837062a0e181",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 40
+    },
+    {
+        "id": "6837064eb2957",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 40
+    },
+    {
+        "id": "6837073a4cf76",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 30
+    },
+    {
+        "id": "683709ae81356",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 40
+    },
+    {
+        "id": "68370a4f6eeaa",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 80
+    },
+    {
+        "id": "68370a5b1116f",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68370a99071d6",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 40
+    },
+    {
+        "id": "68370acabdbc5",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 100
+    },
+    {
+        "id": "68371dece8854",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 310
+    },
+    {
+        "id": "68372630f2174",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 10
+    },
+    {
+        "id": "6837263c10bc1",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372693f0bea",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "683726a133573",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 20
+    },
+    {
+        "id": "683728a91cb16",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "683728e1cb07b",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "683728ed931bb",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "683728f4373f1",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "6837290907c18",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "6837291641b1b",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "6837291938d05",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372a06472ea",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372a09e5758",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372a33a038f",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 10
+    },
+    {
+        "id": "68372a3bd7a8e",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372cda88991",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372cde69a36",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372cf4d5fd6",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 50
+    },
+    {
+        "id": "68372cf82b47f",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372da404d09",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372db2baf8e",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 20
+    },
+    {
+        "id": "68372dbdb3563",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372e4ce4aac",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372e56a6bbc",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372f1069821",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372f13726d8",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372f3dbed8d",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68372f4cd150b",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 10
+    },
+    {
+        "id": "68372f7f9c490",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 20
+    },
+    {
+        "id": "68372f8a265b9",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 20
+    },
+    {
+        "id": "68372fc52c9bb",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 10
+    },
+    {
+        "id": "6837302809700",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "6837324cde92a",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
+    },
+    {
+        "id": "68375093bff5f",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 100
+    },
+    {
+        "id": "683754bbcba37",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 0
+    },
+    {
+        "id": "683755a951f01",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 30
+    },
+    {
+        "id": "683756b98cdbf",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 30
+    },
+    {
+        "id": "683756e811db2",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 0
+    },
+    {
+        "id": "683757215094d",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 60
+    },
+    {
+        "id": "68375de6789b8",
+        "login": "Cow",
+        "score": 40
+    },
+    {
+        "id": "68375df16e66a",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 0
+    },
+    {
+        "id": "68375e40ae6d0",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 0
+    },
+    {
+        "id": "68375e4c03384",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 0
+    },
+    {
+        "id": "68375ea488ded",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 60
+    },
+    {
+        "id": "683763800a9b2",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 140
+    },
+    {
+        "id": "683763b40227f",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 10
+    },
+    {
+        "id": "683763b9dbc2a",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 0
+    },
+    {
+        "id": "683765563a82f",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 20
+    },
+    {
+        "id": "683766baec948",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 20
+    },
+    {
+        "id": "68376a727896e",
+        "login": "Cow",
+        "avatar_id": "cow",
+        "score": 20
+    },
+    {
+        "id": "6837729067803",
+        "login": "Слон",
+        "avatar_id": "elephant",
+        "score": 30
     }
 ]

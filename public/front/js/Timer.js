@@ -26,13 +26,13 @@ export class Timer {
 
         this.isRunning = true;
         this.intervalId = setInterval(() => {
-            this.remainingTime--;
+            this.remainingTime = this.remainingTime - 0.1;
 
             if (this.remainingTime <= 0) {
                 this.stop();
                 this.onTimeEnd();
             }
-        }, 1000);
+        }, 100);
     }
 
     /**
@@ -52,7 +52,11 @@ export class Timer {
     getTimeRemaining() {
         const MINUTES = Math.floor(this.remainingTime / 60);
         const SECONDS = this.remainingTime % 60;
-        return `${MINUTES.toString().padStart(2, '0')}:${SECONDS.toString().padStart(2, '0')}`;
+        const WHOLE_SECONDS = Math.floor(SECONDS);
+        const TENTHS = Math.floor((SECONDS - WHOLE_SECONDS) * 10);
+        return `${MINUTES.toString().padStart(2, '0')}:
+            ${WHOLE_SECONDS.toString().padStart(2, '0')}:
+            ${TENTHS.toString().padStart(1, '0')}`;
     }
 
     /**

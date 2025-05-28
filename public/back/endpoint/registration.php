@@ -19,6 +19,7 @@ if (!empty($errors)) {
 $userData = [
     'login' => $data['login'],
     'password' => $data['password'],
+    'avatar_id' => $data['avatar_id'],
     'game-results' => []
 ];
 $user = $usersRepository->save($userData);
