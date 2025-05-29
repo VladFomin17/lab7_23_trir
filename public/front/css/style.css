@@ -16,6 +16,7 @@ body {
     width: 90%;
     max-width: 350px;
     padding: 25px;
+    margin: 5px;
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -126,7 +127,7 @@ button:hover {
 }
 
 .form-group {
-    margin: 20px 0;
+    margin: 10px 0;
     text-align: center;
 }
 

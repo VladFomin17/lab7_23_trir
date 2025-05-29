@@ -139,6 +139,7 @@ export class Game {
                 this.soundManager.playFail();
                 this.navigation.markIncorrect(answer);
                 this.stopGame();
+                return;
             }
 
             setTimeout(() => {
@@ -151,9 +152,9 @@ export class Game {
         this.timer.start();
 
         this.navigation.updateTimer(this.timer.getTimeRemaining());
-        const timerUpdater = setInterval(() => {
+        const TIMER_UPDATER = setInterval(() => {
             if (!this.timer.isRunning) {
-                clearInterval(timerUpdater);
+                clearInterval(TIMER_UPDATER);
             } else {
                 this.navigation.updateTimer(this.timer.getTimeRemaining());
             }
@@ -190,14 +191,14 @@ export class Game {
      * @param button
      */
     showSparkleEffect(button) {
-        const SPARKLE_COUNT = 20;
+        const SPARKLE_COUNT = 50;
         button.style.position = "relative";
 
         const COLORS = ["#FFD700", "#FF69B4", "#00BFFF", "#32CD32", "#FF4500", "#AD00FF", "#00FFAA"];
 
         for (let i = 0; i < SPARKLE_COUNT; i++) {
-            const X = Math.random() * 80 - 40;
-            const Y = Math.random() * 80 - 40;
+            const X = Math.random() * 90 - 45;
+            const Y = Math.random() * 90 - 45;
             const COLOR = COLORS[Math.floor(Math.random() * COLORS.length)];
 
             const $sparkle = $('<div class="sparkle"></div>').css({

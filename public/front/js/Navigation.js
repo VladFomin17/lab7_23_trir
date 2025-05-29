@@ -89,7 +89,7 @@ export class Navigation {
         const CONTAINER = $('.user-avatar-container');
         const IMG = $('<img>');
         IMG.attr('src', AVATAR)
-            .css({ width: "200px", margin: "10px", cursor: "pointer" });
+            .css({ width: "75px", heigth: "75px", margin: "10px", cursor: "pointer" });
         CONTAINER.append(IMG);
     }
 
@@ -165,20 +165,20 @@ export class Navigation {
         this.switchTabs("stats");
         const CONTAINER = $(".game-container");
         CONTAINER.html(`
-        <button id="start-game">НАЧАТЬ ИГРУ</button>
-        <div class="stats-container">
-            <div class="my-stats-name">Моя статистика</div>
-            <table class="my-stats">
-                <thead id="my-stats-head"></thead>
-                <tbody id="my-stats-body"></tbody>
-            </table>
-            <div class="total-stats-name">Общая статистика</div>
-            <table class="total-stats">
-                <thead id="total-stats-head"></thead>
-                <tbody id="total-stats-body"></tbody>
-            </table>
-        </div>
-    `);
+            <button id="start-game">НАЧАТЬ ИГРУ</button>
+            <div class="stats-container">
+                <div class="my-stats-name">Моя статистика</div>
+                <table class="my-stats">
+                    <thead id="my-stats-head"></thead>
+                    <tbody id="my-stats-body"></tbody>
+                </table>
+                <div class="total-stats-name">Общая статистика</div>
+                <table class="total-stats">
+                    <thead id="total-stats-head"></thead>
+                    <tbody id="total-stats-body"></tbody>
+                </table>
+            </div>
+        `);
         this.bindGameTab(() => this.backToGame());
     }
 

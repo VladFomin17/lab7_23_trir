@@ -5,6 +5,7 @@ import {ApiClient} from "./ApiClient.js";
  */
 document.addEventListener("DOMContentLoaded", function() {
     showAvatars();
+    listenInputEvent();
     document.getElementById("registration-form").addEventListener("submit", async(e) => {
         e.preventDefault();
 
@@ -105,6 +106,19 @@ function isFormFilled() {
         }
     }
     return true;
+}
+
+/**
+ * Удаляет сообщение об ошибке поля при изменении содержимого поля
+ */
+function listenInputEvent() {
+    const FORM_FIELDS = document.querySelectorAll("input");
+    FORM_FIELDS.forEach(FIELD => {
+        FIELD.addEventListener("input", () => {
+            const ERROR_CONTAINER = document.querySelector(`#${FIELD.id}-error`);
+            if (ERROR_CONTAINER) { ERROR_CONTAINER.textContent = ''; }
+        });
+    });
 }
 
 /**

@@ -5,7 +5,7 @@ header("Content-Type: application/json");
 $sounds = [
     "background" => "../../back/assets/audio/background.wav",
     "success"    => "../../back/assets/audio/success.mp3",
-    "failure"    => "../../back/assets/audio/failure.mp3"
+    "failure"    => "../../back/assets/audio/failure.wav"
 ];
 
 foreach ($sounds as $key => $path) {
