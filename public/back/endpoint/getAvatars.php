@@ -2,8 +2,8 @@
 
 header("Content-Type: application/json");
 
-$avatarDir = '../database/avatars/';
-$webDir = '../../back/database/avatars/';
+$avatarDir = '../assets/avatars/';
+$webDir = '../../back/assets/avatars/';
 $avatars = [];
 
 foreach (scandir($avatarDir) as $file) {

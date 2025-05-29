@@ -119,7 +119,7 @@ export class Statistics {
             const NEW_ROW = $("<tr>").html(`
                 <td>${index + 1}</td>
                 <td>${user.login}</td>
-                <td><img src="../../back/database/avatars/${user.avatar_id}.jpg" alt="Аватар" width="50px"></td>
+                <td><img src="../../back/assets/avatars/${user.avatar_id}.jpg" alt="Аватар" width="50px"></td>
                 <td>${user.score}</td>
             `);
             TABLE_BODY.append(NEW_ROW);

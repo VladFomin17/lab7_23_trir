@@ -8,6 +8,6 @@ $userRepository = new JsonRepository("../database/users.json");
 
 $user = $userRepository->findByLogin($data);
 $avatar_id = $user["avatar_id"];
-$avatar_url = "../../back/database/avatars/$avatar_id.jpg";
+$avatar_url = "../../back/assets/avatars/$avatar_id.jpg";
 
 echo json_encode(['success' => true, 'url' => $avatar_url]);

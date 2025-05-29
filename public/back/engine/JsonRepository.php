@@ -129,30 +129,6 @@ class JsonRepository implements Repository
         return false;
     }
 
-    /**
-     * Метод добавления заявки
-     *
-     * @param string $id Id пользователя
-     * @param array $data Данные заявки
-     * @return array
-     * @throws Exception
-     */
-    public function addApplication(string $id, array $data): array
-    {
-        $items = $this->findAll();
-
-        foreach ($items as &$item) {
-            if ($item['id'] === $id) {
-                $data['id'] = substr(uniqid(), 9, 13);
-                $item['applications'][] = $data;
-                $this->saveAll($items);
-                return $data;
-            }
-        }
-
-        throw new Exception("Пользователь не найден");
-    }
-
     public function addScore(string $id, array $data): array
     {
         $items = $this->findAll();
@@ -167,76 +143,6 @@ class JsonRepository implements Repository
         }
 
         throw new Exception("Пользователь не найден");
-    }
-
-    /**
-     * Метод поиска заявки по Id
-     *
-     * @param string $id Id заявки
-     * @return array|null
-     */
-    public function getApplicationById(string $id): ?array
-    {
-        $users = $this->findAll();
-        foreach ($users as $user) {
-            $applications = $user['applications'];
-            foreach ($applications as $application) {
-                if ($application['id'] == $id) {
-                    return $application;
-                }
-            }
-        }
-        return null;
-    }
-
-    /**
-     * Метод удаления заявки
-     *
-     * @param array $currentUser Данные авторизованного пользователя
-     * @return bool
-     */
-    public function delApplication(array $currentUser): bool
-    {
-        $users = $this->findAll();
-        foreach ($users as &$user) {
-            if ($user['id'] === $currentUser['id']) {
-                $newApplications = [];
-                foreach ($user['applications'] as $application) {
-                    if ($application['id'] !== $currentUser['applicationId']) {
-                        $newApplications[] = $application;
-                    }
-                }
-                $user['applications'] = $newApplications;
-            }
-        }
-        $this->saveAll($users);
-        return true;
-    }
-
-    /**
-     * Метод обновления данных заявки
-     *
-     * @param string $id Id заявки
-     * @param array $data Новые данные заявки
-     * @return bool
-     */
-    public function editApplication(string $id, array $data): bool
-    {
-        $users = $this->findAll();
-        $keys = ['husbandName', 'wifeName', 'contactNumber', 'marriagePlace'];
-        foreach ($users as &$user) {
-            $applications = &$user['applications'];
-            foreach ($applications as &$application) {
-                if ($application['id'] == $id) {
-                    foreach ($keys as $key) {
-                        $application[$key] = $data[$key];
-                    }
-                    $this->saveAll($users);
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     /**

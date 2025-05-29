@@ -597,5 +597,17 @@
         "login": "Слон",
         "avatar_id": "elephant",
         "score": 30
+    },
+    {
+        "id": "6837e5ade0dd9",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 10
+    },
+    {
+        "id": "6837e5cac17ca",
+        "login": "new user",
+        "avatar_id": "pig",
+        "score": 0
     }
 ]
