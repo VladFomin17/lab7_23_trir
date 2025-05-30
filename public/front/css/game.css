@@ -622,14 +622,13 @@
 
 .sparkle {
     position: absolute;
-    width: 18px;
-    height: 18px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     animation: sparkle-animation 1s ease-out forwards;
     pointer-events: none;
     z-index: 100;
     opacity: 1;
-    /* Убрали белое свечение */
 }
 
 @keyframes sparkle-animation {

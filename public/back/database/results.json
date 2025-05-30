@@ -1023,5 +1023,41 @@
         "login": "Cow",
         "avatar_id": "cow",
         "score": 200
+    },
+    {
+        "id": "683987420a987",
+        "login": "ника",
+        "avatar_id": "rabbit",
+        "score": 20
+    },
+    {
+        "id": "6839875804fec",
+        "login": "ника",
+        "avatar_id": "rabbit",
+        "score": 40
+    },
+    {
+        "id": "683a177a9150f",
+        "login": "Dog",
+        "avatar_id": "dog",
+        "score": 440
+    },
+    {
+        "id": "683a183beba42",
+        "login": "Dog",
+        "avatar_id": "dog",
+        "score": 10
+    },
+    {
+        "id": "683a188742f6f",
+        "login": "Dog",
+        "avatar_id": "dog",
+        "score": 70
+    },
+    {
+        "id": "683a18e3125eb",
+        "login": "Dog",
+        "avatar_id": "dog",
+        "score": 30
     }
 ]

@@ -786,5 +786,45 @@
             }
         ],
         "id": "683809bb21fb1"
+    },
+    {
+        "login": "ника",
+        "password": "170806nikaK.",
+        "avatar_id": "rabbit",
+        "game-results": [
+            {
+                "score": 20,
+                "id": "92ac"
+            },
+            {
+                "score": 40,
+                "id": "44fd"
+            }
+        ],
+        "id": "683987157c2c3"
+    },
+    {
+        "login": "Dog",
+        "password": "Dog553",
+        "avatar_id": "dog",
+        "game-results": [
+            {
+                "score": 440,
+                "id": "086c"
+            },
+            {
+                "score": 10,
+                "id": "b15c"
+            },
+            {
+                "score": 70,
+                "id": "2915"
+            },
+            {
+                "score": 30,
+                "id": "b9fc"
+            }
+        ],
+        "id": "683a16d41e10c"
     }
 ]

@@ -136,7 +136,6 @@ export class Game {
                 this.currentTimeLimit = parseFloat(this.currentTimeLimit.toFixed(2));
                 this.soundManager.playSuccess();
             } else {
-                this.soundManager.playFail();
                 this.navigation.markIncorrect(answer);
                 this.stopGame();
                 return;
@@ -147,7 +146,10 @@ export class Game {
             }, 800);
         });
 
-        this.timer = new Timer(this.currentTimeLimit, () => { this.stopGame(); } );
+        this.timer = new Timer(this.currentTimeLimit, () => {
+            this.soundManager.playFail();
+            this.stopGame();
+        });
 
         this.timer.start();
 
@@ -191,7 +193,7 @@ export class Game {
      * @param button
      */
     showSparkleEffect(button) {
-        const SPARKLE_COUNT = 50;
+        const SPARKLE_COUNT = 100;
         button.style.position = "relative";
 
         const COLORS = ["#FFD700", "#FF69B4", "#00BFFF", "#32CD32", "#FF4500", "#AD00FF", "#00FFAA"];
