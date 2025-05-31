@@ -137,6 +137,7 @@ export class Game {
                 this.soundManager.playSuccess();
             } else {
                 this.navigation.markIncorrect(answer);
+                this.soundManager.playFail();
                 this.stopGame();
                 return;
             }
